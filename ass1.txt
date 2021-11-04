@@ -1,0 +1,169 @@
+ASSIGNMENT  NO: 1
+
+1.Find out given no is Amrstrong Or Not
+Step 1:  Start
+Step 2:  Accept number i.e Num
+Step 3:  initilize sum=0
+Step 4:  Assign No value to Temp i.e temp=num
+Step 5:  rem=Num%10
+         sum=sum+rem*rem*rem
+          Num=Num/10	
+Step 6:  while(Num>0) then goto  step5
+          otherwise go to Step7
+Step 7 :  if(sum==temp)then display Number is amstrong number otherwise go to 9
+Step 8:  stop
+Step 9:  Display display Number is not amstrong number.
+Step 10:  stop
+
+
+
+
+2..Find  out  all  the  Amrstrong  number falling in the range of 100-999 
+Step1:    Start
+Step 2:   Accept the number from 100
+Step 3:   set i=100 to  
+           i<999
+           num=i
+Step 4:   temp=num
+Step 5:   while(num>0)
+                  initializ sum=0
+                  rem=num%10
+                  num=num/10
+                  sum=sum+rem*rem*rem
+Step 6:   if(sum==temp)then display Number is amstrong number 
+          otherwise Display display Number is not amstrong number 
+Step7:i++ 
+Step8:stop
+
+
+
+
+
+
+3.Find out simple as well as compund interest of supplied values
+
+Step 1:  start
+Step 2:  Accept the Suplied values(Accept the Principle,rate and time)
+Step 3:   calculate SI=(principle*rate*time)/100
+Step 40:  print SI
+Step 5:  calculate CI=principle*math.pow(1+r*0.01,t)-p
+Step 6:  print CI
+
+
+
+
+
+4.supply marks of three subjects and declare the result,result declaration in based below condition:
+condition1:all subjects marks is greater than 60 is passed
+condition2:any two subject marked are greater than 60 promoted
+Condition 3: any one subject marked are greater than 60 or less subject less than 60 is failed
+ANS:
+Step1: Start
+ Step2: Input subjects a,b and c
+ Step3: if( a&&b&&c >60)
+                  Then print Passed
+                Else if(a&&b||c >60)
+                   Then print Promoted
+                Else 
+                   Then print Failed 
+Step4: Stop
+
+
+
+
+Q5.Calculate the income tax
+
+Step 1:    Start
+Step 2:    enter input CTC
+Step 3:    if(CTC<=180000 )
+              Then print taxed amount:0
+Step 4:    if(CTC>181000&& CTC <300001)
+                 Then print taxed amount: CTC*0.1
+Step  5:   if(CTC>300000&&CTC<500001)
+                Then print taxed amount: CTC*0.2
+Step  6:  if (CTC >500000&&CTC<1000001)
+                 Then print taxed amount:CTC*0.3
+Step 7:    Stop
+
+
+
+6.Consider UI based application where you are asking a user to enter his login name and password,after entering the valid user-id and password it will be print the message “welcome”along with username.as per the validation is concered,the program should keep a track login attempts.after three attempts  message should flashed saying contact admin and the program should be terminate
+Step1:start
+Step 2 : Input username & password.
+Step 3 : Retry =0;
+
+Step 4 : check username & password
+
+Step 5 : If username = existing username & password = existing password
+
+Step 6 : Print “welcome & username”
+
+Step 7 : else
+                   Retry ++
+Step 8 : Follow the step 2 again.
+
+Step 9 : If Retry =3;
+
+               Print “ Contact Admin”.
+
+Step 10 : Stop.
+
+
+
+
+7.there is an array is size of 15 which may or may not be sorted you should write a program to accept no and search it if it contain in array or not
+Step 1:  Accept Array
+Step 2  :Display Array
+Step 3:  Enter the element you want to search in array i.e key
+Step 4:  set boolean  flag=false(if flag is flag in our array element is not present)
+Step 5:  use for Loop for each element
+               if  arr[index]==key
+               then set flag==true
+               end for loop
+Step 6:   if flag==true print that element
+Step 7:   else print element not found
+
+
+
+
+Q8: Apply Sorting using Bubble Sort
+
+Step 1:   Begin
+Step 2:   Input a[15]
+Step 3:   Set i=13
+Step 4:   Repeat Step 4to 9 while (i >= 0)
+Step 5:   Set j=0
+Step 6:   Repeat Step 7 and 8 white (j<= i)
+Step 7:   if a[i]> a[j+1] then
+              Set temp = a[j]
+              A[j] =a[j+1]
+              A[j+1] = temp
+Step 8:   j = j+1
+Step 9:   i= i-1
+Step 10:  print a[15]
+Step 11:  exit
+
+
+
+
+Q9.Accept the marks of three students for subject say A,B,C find the total scored and the average and the average in all subjects,also findbthe total and average scored by student in each respective subject.
+
+ANS:
+Step1:     Start
+
+Step 2:    Accept the three subject marks for each student
+Step 3:     Set sub= 3  
+Step 4:     Sum of subject=  A+B+C
+Step 5:     Avrage = Sum of subject / sub
+
+Step 6:.    Set std = 3 
+Step 7:.    Sum of Sub A=A+A+A
+Step 8:     Avrage =Sum of Sub A/std
+
+Step 9:     Sum of Sub B=B+B+B
+Step 10:   Avrage =Sum of Sub B/std
+
+Step 11:   Sum of Sub C=C+C+C2
+Step 12:   Avrage =Sum of Sub C/std
+Step 13:   End
+
