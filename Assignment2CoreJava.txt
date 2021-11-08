@@ -1,0 +1,397 @@
+Q1:
+
+we can not extend singletone class beacause
+1.it wont have default constructor and we make user define constructor as private
+
+
+
+
+public class Facebook {
+    static Facebook f1;
+    private  Facebook()
+    {
+        System.out.println("session started");
+
+    }
+    static Facebook getsession()
+    {
+        if(f1==null)
+        {
+            f1= new Facebook(); //singletone object
+        }
+        return  f1;
+    }
+    void displayprofile()
+    {
+        System.out.println("show user profile");
+    }
+    void displayhome()
+    {
+        System.out.println("Facebook home page");
+    }
+}
+
+
+
+
+
+
+//MAIN_CLASS
+
+public class MainApp3 {
+    public static void main(String[] args) {
+      Facebook f2=Facebook.getsession();
+      f2.displayhome();
+      Facebook f3=Facebook.getsession();
+      f3.displayprofile();
+    }
+}
+
+Output:
+session started
+Facebook home page
+show user profile
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
+Q2:
+
+abstract public class Employee {
+  public void  calculatesalary() {
+    
+   	}
+}
+
+
+//Manager_class
+public class Manager extends Employee{
+	int sal;
+	int i;
+  public Manager(int sal,int i) {
+	  this.sal = sal;
+	  this.i =i;
+		 
+ }
+   public void  calculatesalary() {
+	  System.out.println("Totle salary of Employee "+(sal+i));
+	  
+}
+  }
+
+//LABOUR_CLASS
+
+public class Labour extends Employee {
+	int sal1;
+	int overtime;
+  public Labour(int sal1,int overtime) {
+	  this.sal1 = sal1;
+	  this.overtime =overtime;
+		 
+  }
+  public void  calculatesalary() {
+	  System.out.println("Totle salary of Labour "+(sal1  +overtime));
+	  
+}
+  }
+
+//Main_Class
+
+import java.util.Scanner;
+
+public class Main {
+      public static void main(String[] args) {
+	
+    Scanner sc = new Scanner(System.in);
+    System.out.println("enter salary of Manager:");
+    int n = sc.nextInt();
+    
+    System.out.println("enter insertive of of Manager:");
+    int i = sc.nextInt();
+    
+    System.out.println("enter salary of Labour:");
+    int n1 = sc.nextInt();
+    
+    System.out.println("enter overtime of Labour:");
+    int o = sc.nextInt();
+    
+    	  
+    	  Manager m =new Manager(n, i);
+    	  m.calculatesalary();
+    	  
+    	  Labour l = new Labour(n1, o);
+    	  l.calculatesalary();
+	
+}
+}
+Output:
+enter salary of Manager:
+10000
+enter insertive of of Manager:
+4000
+enter salary of Labour:
+6000
+enter overtime of Labour:
+3000
+Totle salary of Employee 14000
+Totle salary of Labour 9000
+------------------------------------------------------------------------------------------------------------------------
+
+Q3:
+//BANK CLASS
+public class Bank1 {
+    double rateofinterst=0.06;
+    double amtbalance=0;
+    void totalbalance(double amt)
+    {
+        amtbalance+=amt;
+        double newamount=
+amtbalance+amtbalance*rateofinterst;
+        System.out.println("balance is"+newamount);
+    }
+}
+
+//current account
+public class CurrentAccount {
+    double rateofinterst=0.05;
+    double amtbalance=0;
+
+    void totalbalance(double amt)
+    {
+        amtbalance+= amt;
+        double newamount=amtbalance+amtbalance*rateofinterst;
+        System.out.println("currentbalance is"+newamount);
+    }
+}
+
+//saving account
+public class SavingAccount extends Bank1 {
+    double rateofinterst=0.04;
+    double amtbalance=0;
+void totalbalance(double amt)
+    {
+        amtbalance+=amt;
+        double newamount=amtbalance+amtbalance*rateofinterst;
+        System.out.println("savingbalance is"+newamount);
+    }
+}
+
+//mainclass
+public class MainApp1 {
+    public static void main(String[] args) {
+        SavingAccount s1=new SavingAccount();
+        s1.totalbalance(3000);
+        CurrentAccount c1=new CurrentAccount();
+        c1.totalbalance(4000);
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------
+
+
+
+3.TO FIND OUT TOTAL CASH IN THE BANK:
+
+public class Bank {
+public static void main(String[] args) {
+   SavingAccount savingaccount = new SavingAccount(10000,600);
+   CurrentAccount currentaccount = new CurrentAccount(1000,300);
+   savingaccount.totalAmt();
+   currentaccount.totalAmt();
+   double totalbankbal= savingaccount.totalAmt()+currentaccount.totalAmt();
+   System.out.println("total cash in the bank:"+totalbankbal);
+   }
+
+}
+
+public class SavingAccount extends Bank{
+	    private double fixedDeposit;
+	    private double balance;
+	    
+
+	    public SavingAccount(double fixedDeposit, double balance)
+	    {
+	    	this.fixedDeposit=fixedDeposit;
+	    	this.balance=balance;
+	    }
+	    public double totalAmt() {
+	    	double Savingsbal= fixedDeposit+balance;
+	    	return Savingsbal;
+	   }
+}
+public class CurrentAccount extends Bank {
+	private double cashcredit;
+	private double balance;
+	
+ public CurrentAccount(double cashcredit, double balance)
+ {
+	 this.balance=balance;
+	 this.cashcredit=cashcredit;
+	 
+ }
+ public double totalAmt() {
+
+     double currentbal= cashcredit+balance;
+     return currentbal;
+      }
+	}
+   ------------------------------------------------------
+   ------------------------------------------------------
+Q:4 
+1.if any class has method as abstract then that class must be declared abstract 
+Ans : yes , if we doesnt make the class as abstract it will give error .
+We should make the method and class as abstract like this
+Package ass2.ques4;
+
+public abstract class Abstracts {
+    public abstract void print();
+    {
+
+    }
+}
+
+2.ABSTRACT CLASS CANNOT BE INSTANTIATED
+ANS :yes, because in abstarct class we might have only abstract method,when we have
+Abstract method there is no point of instantiating the class as there is nothing to 
+Access
+
+if we try to instantiate the abstract class
+it will give error like this
+java: ass2.ques4.Abstracts is abstract; cannot be instantiated
+
+3.WHEN WE EXTEND THE ABSTRACT WE NEED TO PROVIDE IMPLEMENATATION USING OVERIDING OTHERWISE
+DECALRE THE SUBCLASS ALSO ABSTRACT
+ANS:
+If we dont provide implenmenattion it will give error like this
+Java: ass2.ques4.abstractmain is not abstract and does not override abstract method print() 
+
+TO OVERCOME THIS WE NEED TO PROVIDE IMPLEMENTATION IN SUBCLASS LIKE THIS
+package ass2.ques4;
+
+public class AbstractMain extends Abstracts
+{
+    public static void main(String[] args) {
+    @Override
+    public void print() {
+	System.out.println("Implenting a abstract method by overriding");
+    }
+}
+}
+
+4.abstract class cannot be private
+Ans: yes, because we cannot access them in any subclass and cant provide impleamnetation to that 
+Abstract class
+
+5.Abstract class cannot be final
+Ans: yes, because we can access them in any subclass but can't provide impleamnetation to that 
+Abstract class or can't be overridden.
+
+6)we can declare the class as abstract without having abstract method
+Ans:yes,but if we do that we can't instatntiate that class.
+------------------------------------------------------------------------------------------------------------------------
+Q5:
+
+//BaseClass_Shape
+
+public abstract class Shape {
+	public abstract void draw();
+
+}
+
+//SubClass_Rectangle
+
+public class Rectangle extends Shape{
+	public Rectangle() {
+
+	}
+	@Override
+	public void draw() {
+	System.out.println("Shape of Rectangle is Drawn");
+			                   }
+
+}
+//SubClass_Cube
+public class Cube extends Shape{
+public  Cube() {	
+	}
+@Override
+public void draw() {
+	System.out.println("Shape of cube is drawn");
+	
+                   }
+	}
+
+//SubClass_Line
+public class Line extends Shape{
+public Line() {
+ }
+
+@Override
+public void draw() {
+	System.out.println("Shape of Line is drawn");
+	
+                   }
+}
+
+
+//Main
+public class Main {
+
+	public static void main(String[] args) {
+		Rectangle r = new Rectangle();
+		Cube c = new Cube();
+		Line l = new Line();
+r.draw();
+c.draw();
+l.draw();
+	}
+
+}
+
+
+OUTPUT
+Shape of Rectangle is Drawn
+Shape of cube is drawn
+Shape of Line is drawn
+------------------------------------------------------------------------------------------------------------------------
+ 
+Q:6
+
+public abstract class Persistence {
+    public abstract void persist();
+}
+
+
+public class FilePersistence extends Persistence{
+    @Override
+    public void persist()
+    {
+        System.out.println("Overiding in FIle persistence");
+    }
+}
+
+
+public class DatabasePersistence extends Persistence{
+    @Override
+    public void persist()
+    {
+        System.out.println("Overiding in FIle persistence");
+    }
+}
+
+
+public class Client{
+    public static void main(String[] args) {
+        Persistence persistence = new Persistence() {
+            @Override
+            public void persist() {
+                System.out.println("");
+                System.out.println("1.The client created the object of Persistance which is abstract class");
+                System.out.println("");
+                System.out.println("2.And then clients is doing following invocation of abstract method");
+                System.out.println("");
+                System.out.println("3.The client is invoking the persist method without knowing that data is saved in file and database'");
+            }
+        };
+        persistence.persist();
+    }
+}
